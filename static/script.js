@@ -1,0 +1,28 @@
+const sendBtn = document.getElementById("send-buttom");
+const userInput = document.getElementById("user-input");
+const chatBox = document.getElementById("chat-box");
+
+function addMessage(sender, text) {
+    const message = document.createElement("div");
+    message.classList.add("message", sender);
+    message.textContent = text;
+    chatBox.appendChild(message);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+sendBtn.addEventListener("click", async() => {
+    const text = userInput.value.trim();
+    if (!text) return;
+
+    addMessage("user", text);
+    userInput.value = "";
+    
+    const response = await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "aplication/json"},
+        body: JSON.stringify({message: text})
+    });
+
+    const data = await response.json();
+    addMessage("bot", data.reply);
+})
