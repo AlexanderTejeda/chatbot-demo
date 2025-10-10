@@ -19,7 +19,9 @@ sendBtn.addEventListener("click", async() => {
     
     const response = await fetch("/chat", {
         method: "POST",
-        headers: {"Content-Type": "aplication/json"},
+        headers: {
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({message: text})
     });
 
