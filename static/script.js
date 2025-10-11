@@ -1,4 +1,4 @@
-const sendBtn = document.getElementById("send-buttom");
+const sendBtn = document.getElementById("send-button");
 const userInput = document.getElementById("user-input");
 const chatBox = document.getElementById("chat-box");
 

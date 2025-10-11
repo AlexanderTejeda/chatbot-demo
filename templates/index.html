@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatBot Demo</title>
     <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-    <div class="chat-conteiner">
-        <div id="chat-box" class="chat-box"></div>
-        <div class="input-container">
-            <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
-            <button id="send-buttom">Enviar</button>
-        </div>
+  <div class="chat-container">
+    <div class="chat-header">
+      🤖 ChatBot Demo
     </div>
 
-    <script src="../static/script.js"></script>
+    <div id="chat-box" class="chat-box">
+    
+    </div>
+
+    <div class="input-container">
+      <input type="text" id="user-input" placeholder="Escribe tu mensaje..." autocomplete="off" />
+      <button id="send-button">Enviar</button>
+    </div>
+  </div>
+
+  <script src="../static/script.js"></script>
 </body>
 </html>
