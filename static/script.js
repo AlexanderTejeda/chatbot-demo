@@ -28,3 +28,10 @@ sendBtn.addEventListener("click", async() => {
     const data = await response.json();
     addMessage("bot", data.reply);
 })
+
+userInput.addEventListener("keydown", (e) => {
+    if(e.value === "Enter" && !e.shiftKey){
+        e.preventDefault();
+        sendBtn.click();
+    }
+});
